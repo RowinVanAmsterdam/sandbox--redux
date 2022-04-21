@@ -1,16 +1,19 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
-import AddTodoForm from './components/AddTodoForm';
-import Todolist from './components/TodoList';
+import Header from './components/Header';
+import Core from './pages/Core';
+import Toolkit from './pages/Toolkit';
 
 function App() {
   return (
-    <div className="app">
-      <section>
-      <Todolist />
-      <AddTodoForm />
-      </section>
-    </div>
-  );
+    <BrowserRouter>
+        <Header />
+      <Routes>
+        <Route path="/toolkit" element={<Toolkit />} />
+        <Route path="/core" element={<Core />} />
+      </Routes>
+    </BrowserRouter>
+  )
 }
 
 export default App;
